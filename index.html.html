@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Aegis Prestige — Conciergerie Premium Var & Côte d'Azur</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
+<style>
+*{box-sizing:border-box;margin:0;padding:0;scroll-behavior:smooth}
+:root{
+  --dark:#0A0A0A;--dark2:#111;--dark3:#1A1A1A;--dark4:#222;
+  --gold:#C9A84C;--gold2:#E8D5A3;--gold3:#6B5420;
+  --white:#FFFFFF;--grey:#888;--grey2:#555;--sep:#222;
+}
+body{font-family:'Jost',sans-serif;background:var(--dark);color:var(--white);line-height:1.6;font-size:15px}
+
+nav{display:flex;align-items:center;justify-content:space-between;padding:0 48px;height:64px;background:rgba(10,10,10,0.98);border-bottom:0.5px solid var(--sep);position:sticky;top:0;z-index:100;backdrop-filter:blur(8px)}
+.logo{font-family:'Cormorant Garamond',serif;font-size:21px;font-weight:600;color:var(--white);letter-spacing:0.06em;text-decoration:none}
+.logo span{color:var(--gold)}
+.nav-links{display:flex;gap:28px;list-style:none}
+.nav-links a{font-size:11px;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;color:var(--grey);text-decoration:none;transition:color 0.2s}
+.nav-links a:hover{color:var(--gold)}
+.nav-cta{background:var(--gold);color:var(--dark);font-size:11px;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;padding:10px 20px;border:none;cursor:pointer;font-family:'Jost',sans-serif;transition:opacity 0.2s}
+.nav-cta:hover{opacity:0.85}
+
+.hero{min-height:520px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:80px 48px 64px;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:var(--gold)}
+.hero::after{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 0%,rgba(201,168,76,0.06) 0%,transparent 70%);pointer-events:none}
+.hero-tag{display:inline-flex;align-items:center;gap:8px;border:0.5px solid var(--gold3);color:var(--gold);font-size:10px;font-weight:500;letter-spacing:0.14em;text-transform:uppercase;padding:6px 16px;margin-bottom:32px}
+.hero h1{font-family:'Cormorant Garamond',serif;font-size:58px;font-weight:400;line-height:1.08;margin-bottom:20px;max-width:660px}
+.hero h1 em{color:var(--gold);font-style:italic}
+.hero-sub{font-size:15px;font-weight:300;color:var(--grey);max-width:460px;margin-bottom:40px;line-height:1.75}
+.hero-btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+.btn-gold{background:var(--gold);color:var(--dark);font-size:11px;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;padding:14px 32px;border:none;cursor:pointer;font-family:'Jost',sans-serif;transition:opacity 0.2s;text-decoration:none;display:inline-block}
+.btn-gold:hover{opacity:0.85}
+.btn-outline{background:transparent;color:var(--gold);font-size:11px;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;padding:13px 32px;border:0.5px solid var(--gold3);cursor:pointer;font-family:'Jost',sans-serif;text-decoration:none;display:inline-block;transition:border-color 0.2s}
+.btn-outline:hover{border-color:var(--gold)}
+.hero-stats{display:flex;gap:48px;margin-top:56px;padding-top:44px;border-top:0.5px solid var(--sep);flex-wrap:wrap;justify-content:center}
+.hero-stat-num{font-family:'Cormorant Garamond',serif;font-size:36px;font-weight:600;color:var(--gold);display:block;line-height:1}
+.hero-stat-label{font-size:10px;font-weight:300;color:var(--grey);letter-spacing:0.08em;text-transform:uppercase;margin-top:4px;display:block}
+
+.section{padding:72px 48px;border-top:0.5px solid var(--sep)}
+.section-alt{background:var(--dark2)}
+.section-inner{max-width:960px;margin:0 auto}
+.section-label{font-size:10px;font-weight:500;letter-spacing:0.16em;text-transform:uppercase;color:var(--gold);margin-bottom:10px}
+.section-title{font-family:'Cormorant Garamond',serif;font-size:38px;font-weight:400;line-height:1.15;margin-bottom:12px}
+.section-sub{font-size:14px;font-weight:300;color:var(--grey);max-width:500px;line-height:1.75;margin-bottom:44px}
+
+/* SERVICES — grille sans fond gris entre cases */
+.services-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:1px;background:var(--sep)}
+@media(max-width:900px){.services-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:480px){.services-grid{grid-template-columns:1fr}}
+.service-card{background:var(--dark);padding:28px 22px;transition:background 0.25s}
+.service-card:hover{background:var(--dark3)}
+.service-num{font-size:9px;font-weight:500;letter-spacing:0.12em;color:var(--gold);margin-bottom:14px;display:block}
+.service-icon{color:var(--gold);font-size:20px;margin-bottom:12px;display:block}
+.service-title{font-family:'Cormorant Garamond',serif;font-size:16px;font-weight:600;margin-bottom:8px}
+.service-desc{font-size:12px;font-weight:300;color:var(--grey);line-height:1.6}
+
+.formule-grid{display:grid;grid-template-columns:1fr 280px;gap:40px;align-items:start}
+.formule-items{display:flex;flex-direction:column}
+.formule-item{display:flex;gap:16px;padding:16px 0;border-bottom:0.5px solid var(--sep)}
+.formule-item:first-child{border-top:0.5px solid var(--sep)}
+.f-dot{width:5px;height:5px;border-radius:50%;background:var(--gold);flex-shrink:0;margin-top:7px}
+.f-name{font-size:13px;font-weight:500;margin-bottom:3px}
+.f-desc{font-size:12px;font-weight:300;color:var(--grey)}
+.formule-card{background:var(--dark3);border:0.5px solid var(--gold3);padding:28px 24px;position:sticky;top:76px}
+.fc-badge{background:var(--gold);color:var(--dark);font-size:9px;font-weight:500;letter-spacing:0.12em;text-transform:uppercase;padding:4px 12px;display:inline-block;margin-bottom:20px}
+.fc-rate{font-family:'Cormorant Garamond',serif;font-size:52px;font-weight:600;line-height:1;color:var(--white)}
+.fc-rate-sub{font-size:12px;color:var(--grey);font-weight:300;margin-top:4px;margin-bottom:24px}
+.fc-list{list-style:none;display:flex;flex-direction:column;gap:10px;margin-bottom:24px}
+.fc-list li{font-size:12px;font-weight:300;color:var(--grey);display:flex;align-items:center;gap:8px}
+.fc-list li i{color:var(--gold);font-size:13px;flex-shrink:0}
+.fc-note{font-size:11px;color:var(--grey2);font-weight:300;border-top:0.5px solid var(--sep);padding-top:14px;line-height:1.6}
+
+.engagements-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px}
+.engagement-card{border:0.5px solid var(--sep);padding:28px 22px;position:relative;transition:border-color 0.25s}
+.engagement-card:hover{border-color:var(--gold3)}
+.engagement-icon{color:var(--gold);font-size:24px;margin-bottom:16px;display:block}
+.engagement-title{font-family:'Cormorant Garamond',serif;font-size:18px;font-weight:600;margin-bottom:8px}
+.engagement-desc{font-size:13px;font-weight:300;color:var(--grey);line-height:1.7}
+.engagement-num{position:absolute;top:20px;right:20px;font-size:10px;font-weight:500;letter-spacing:0.1em;color:var(--gold3)}
+
+.faq-wrap{max-width:700px}
+.faq-item{border-bottom:0.5px solid var(--sep)}
+.faq-q{width:100%;background:none;border:none;color:var(--white);font-family:'Jost',sans-serif;font-size:13px;font-weight:500;text-align:left;padding:18px 0;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:16px}
+.faq-q i{color:var(--gold);font-size:16px;flex-shrink:0;transition:transform 0.25s}
+.faq-a{font-size:13px;font-weight:300;color:var(--grey);line-height:1.75;max-height:0;overflow:hidden;transition:max-height 0.35s ease,padding 0.3s}
+.faq-item.open .faq-a{max-height:250px;padding-bottom:18px}
+.faq-item.open .faq-q i{transform:rotate(45deg)}
+
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start}
+.contact-info-items{display:flex;flex-direction:column;gap:24px;margin-top:8px}
+.ci{display:flex;align-items:flex-start;gap:14px}
+.ci i{color:var(--gold);font-size:18px;margin-top:1px;flex-shrink:0}
+.ci-label{font-size:10px;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;color:var(--grey);margin-bottom:3px}
+.ci-val{font-size:14px;color:var(--white);font-weight:300}
+.contact-form{display:flex;flex-direction:column;gap:10px}
+.contact-form input,.contact-form textarea,.contact-form select{background:var(--dark3);border:0.5px solid var(--sep);color:var(--white);font-family:'Jost',sans-serif;font-size:13px;font-weight:300;padding:12px 14px;width:100%;outline:none;transition:border-color 0.2s;-webkit-appearance:none}
+.contact-form select{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M0 0l6 8 6-8z' fill='%23888'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center}
+.contact-form input:focus,.contact-form textarea:focus,.contact-form select:focus{border-color:var(--gold3)}
+.contact-form input::placeholder,.contact-form textarea::placeholder{color:var(--grey2)}
+.contact-form textarea{resize:vertical;min-height:100px}
+.contact-form button{background:var(--gold);color:var(--dark);font-size:11px;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;padding:14px;border:none;cursor:pointer;font-family:'Jost',sans-serif;margin-top:4px;transition:opacity 0.2s}
+.contact-form button:hover{opacity:0.85}
+
+footer{padding:32px 48px;border-top:0.5px solid var(--sep);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px}
+.footer-logo{font-family:'Cormorant Garamond',serif;font-size:17px;font-weight:600;color:var(--white)}
+.footer-logo span{color:var(--gold)}
+.footer-legal{font-size:11px;font-weight:300;color:var(--grey);line-height:1.7;text-align:right}
+
+@media(max-width:680px){
+  nav{padding:0 20px}.nav-links{display:none}
+  .hero{padding:56px 20px 48px}.hero h1{font-size:36px}
+  .hero-stats{gap:28px}
+  .section{padding:56px 20px}
+  .formule-grid,.contact-grid{grid-template-columns:1fr}
+  .formule-card{position:static}
+  footer{flex-direction:column;text-align:center}.footer-legal{text-align:center}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="#" class="logo">Aegis<span>·</span>Prestige</a>
+  <ul class="nav-links">
+    <li><a href="#services">Services</a></li>
+    <li><a href="#formule">Formule</a></li>
+    <li><a href="#engagements">Nos engagements</a></li>
+    <li><a href="#faq">FAQ</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <button class="nav-cta" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Confier mon bien</button>
+</nav>
+
+<section class="hero">
+  <div class="hero-tag"><i class="ti ti-map-pin" aria-hidden="true"></i> Conciergerie Premium — Littoral Varois & Côte d'Azur</div>
+  <h1>Votre bien mérite<br>une gestion <em>d'exception</em></h1>
+  <p class="hero-sub">Nous prenons en charge l'intégralité de la gestion de votre bien — de l'optimisation des revenus jusqu'à l'accueil de chaque voyageur.</p>
+  <div class="hero-btns">
+    <a href="#contact" class="btn-gold">Confier mon bien</a>
+    <a href="#formule" class="btn-outline">Voir la formule</a>
+  </div>
+  <div class="hero-stats">
+    <div><span class="hero-stat-num">20%</span><span class="hero-stat-label">Commission tout inclus</span></div>
+    <div><span class="hero-stat-num">7j/7</span><span class="hero-stat-label">Disponibilité</span></div>
+    <div><span class="hero-stat-num">+20%</span><span class="hero-stat-label">Revenus optimisés</span></div>
+    <div><span class="hero-stat-num">100%</span><span class="hero-stat-label">Sérénité propriétaire</span></div>
+  </div>
+</section>
+
+<section class="section" id="services">
+  <div class="section-inner">
+    <p class="section-label">Ce que nous faisons</p>
+    <h2 class="section-title">Tout ce dont votre bien a besoin,<br>sans que vous ayez à intervenir.</h2>
+    <p class="section-sub">De la première photo jusqu'au reporting mensuel, nous gérons chaque détail pour maximiser vos revenus et préserver votre bien.</p>
+    <div class="services-grid">
+      <div class="service-card">
+        <span class="service-num">01</span>
+        <i class="ti ti-camera service-icon" aria-hidden="true"></i>
+        <div class="service-title">Photos professionnelles</div>
+        <div class="service-desc">Mise en valeur optimale de votre bien pour maximiser les clics et réservations.</div>
+      </div>
+      <div class="service-card">
+        <span class="service-num">02</span>
+        <i class="ti ti-world service-icon" aria-hidden="true"></i>
+        <div class="service-title">Annonces multi-plateformes</div>
+        <div class="service-desc">Création et optimisation sur Airbnb, Booking et Abritel.</div>
+      </div>
+      <div class="service-card">
+        <span class="service-num">03</span>
+        <i class="ti ti-chart-line service-icon" aria-hidden="true"></i>
+        <div class="service-title">Tarification dynamique</div>
+        <div class="service-desc">Ajustement régulier des prix selon la saison et la demande locale.</div>
+      </div>
+      <div class="service-card">
+        <span class="service-num">04</span>
+        <i class="ti ti-message-circle service-icon" aria-hidden="true"></i>
+        <div class="service-title">Communication 7j/7</div>
+        <div class="service-desc">Réponses en français et en anglais, de la première demande jusqu'au départ.</div>
+      </div>
+      <div class="service-card">
+        <span class="service-num">05</span>
+        <i class="ti ti-key service-icon" aria-hidden="true"></i>
+        <div class="service-title">Accueil physique</div>
+        <div class="service-desc">Présence sur place à chaque arrivée. Chaque voyageur accueilli avec soin.</div>
+      </div>
+      <div class="service-card">
+        <span class="service-num">06</span>
+        <i class="ti ti-shield-check service-icon" aria-hidden="true"></i>
+        <div class="service-title">Ménage & inspection</div>
+        <div class="service-desc">Contrôle rigoureux après chaque départ. Aucune mauvaise surprise.</div>
+      </div>
+      <div class="service-card">
+        <span class="service-num">07</span>
+        <i class="ti ti-file-text service-icon" aria-hidden="true"></i>
+        <div class="service-title">Livret d'accueil</div>
+        <div class="service-desc">Document personnalisé par bien avec bons plans locaux et instructions détaillées.</div>
+      </div>
+      <div class="service-card">
+        <span class="service-num">08</span>
+        <i class="ti ti-gift service-icon" aria-hidden="true"></i>
+        <div class="service-title">Cadeau signature</div>
+        <div class="service-desc">Produit local soigneusement sélectionné pour chaque voyageur à son arrivée.</div>
+      </div>
+      <div class="service-card">
+        <span class="service-num">09</span>
+        <i class="ti ti-tool service-icon" aria-hidden="true"></i>
+        <div class="service-title">Gestion incidents</div>
+        <div class="service-desc">Urgences gérées sans vous déranger. Coordination artisans 7j/7.</div>
+      </div>
+      <div class="service-card">
+        <span class="service-num">10</span>
+        <i class="ti ti-report-analytics service-icon" aria-hidden="true"></i>
+        <div class="service-title">Reporting mensuel</div>
+        <div class="service-desc">Bilan complet chaque mois : revenus, taux d'occupation, avis et perspectives.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section-alt" id="formule">
+  <div class="section-inner">
+    <p class="section-label">Notre formule</p>
+    <h2 class="section-title">Intendance Complète</h2>
+    <p class="section-sub">Une seule formule, claire et transparente. Tout est inclus, rien n'est caché.</p>
+    <div class="formule-grid">
+      <div class="formule-items">
+        <div class="formule-item"><div class="f-dot"></div><div><div class="f-name">Photos professionnelles incluses</div><div class="f-desc">Shooting réalisé avant la mise en ligne, sans frais supplémentaires.</div></div></div>
+        <div class="formule-item"><div class="f-dot"></div><div><div class="f-name">Optimisation des annonces</div><div class="f-desc">Textes, photos, tarifs — tout est calibré pour maximiser votre taux d'occupation.</div></div></div>
+        <div class="formule-item"><div class="f-dot"></div><div><div class="f-name">Gestion complète des voyageurs</div><div class="f-desc">De la première demande jusqu'au départ. Réponse rapide, accueil soigné.</div></div></div>
+        <div class="formule-item"><div class="f-dot"></div><div><div class="f-name">Coordination ménage & contrôle qualité</div><div class="f-desc">Chaque rotation vérifiée avant l'arrivée du voyageur suivant.</div></div></div>
+        <div class="formule-item"><div class="f-dot"></div><div><div class="f-name">Gestion des incidents et urgences</div><div class="f-desc">Nous intervenons, vous êtes informé. Jamais dérangé inutilement.</div></div></div>
+        <div class="formule-item"><div class="f-dot"></div><div><div class="f-name">Reporting mensuel détaillé</div><div class="f-desc">Revenus, occupation, avis voyageurs — bilan complet chaque mois.</div></div></div>
+      </div>
+      <div class="formule-card">
+        <div class="fc-badge">Commission unique</div>
+        <div class="fc-rate">20<span style="font-size:22px;font-weight:300;color:var(--grey)">%</span></div>
+        <div class="fc-rate-sub">sur les revenus encaissés</div>
+        <ul class="fc-list">
+          <li><i class="ti ti-check" aria-hidden="true"></i>Photos pro incluses</li>
+          <li><i class="ti ti-check" aria-hidden="true"></i>Aucun frais de mise en service</li>
+          <li><i class="ti ti-check" aria-hidden="true"></i>Engagement 3 mois minimum</li>
+          <li><i class="ti ti-check" aria-hidden="true"></i>Préavis de résiliation 2 mois</li>
+          <li><i class="ti ti-check" aria-hidden="true"></i>Reporting mensuel offert</li>
+        </ul>
+        <button class="btn-gold" style="width:100%;text-align:center" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Demander un rendez-vous</button>
+        <p class="fc-note" style="margin-top:14px">Frais de ménage non inclus — facturés séparément au coût réel.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="engagements">
+  <div class="section-inner">
+    <p class="section-label">Notre promesse</p>
+    <h2 class="section-title">Ce que vous pouvez attendre de nous</h2>
+    <p class="section-sub" style="margin-bottom:40px">Pas de grands discours. Des engagements concrets, tenus à chaque bien, à chaque rotation.</p>
+    <div class="engagements-grid">
+      <div class="engagement-card">
+        <span class="engagement-num">01</span>
+        <i class="ti ti-eye engagement-icon" aria-hidden="true"></i>
+        <div class="engagement-title">Transparence totale</div>
+        <div class="engagement-desc">Chaque euro encaissé et chaque dépense engagée apparaît dans votre reporting mensuel. Vous savez toujours où en est votre bien.</div>
+      </div>
+      <div class="engagement-card">
+        <span class="engagement-num">02</span>
+        <i class="ti ti-clock engagement-icon" aria-hidden="true"></i>
+        <div class="engagement-title">Réactivité garantie</div>
+        <div class="engagement-desc">Toute demande d'un voyageur reçoit une réponse en moins de 2 heures. Toute urgence sur votre bien est traitée le jour même.</div>
+      </div>
+      <div class="engagement-card">
+        <span class="engagement-num">03</span>
+        <i class="ti ti-heart engagement-icon" aria-hidden="true"></i>
+        <div class="engagement-title">Soin du bien</div>
+        <div class="engagement-desc">Nous gérons votre bien comme si c'était le nôtre. Chaque inspection, chaque rotation est l'occasion de vérifier et maintenir son état.</div>
+      </div>
+      <div class="engagement-card">
+        <span class="engagement-num">04</span>
+        <i class="ti ti-trending-up engagement-icon" aria-hidden="true"></i>
+        <div class="engagement-title">Optimisation continue</div>
+        <div class="engagement-desc">Tarifs, annonces, photos — nous ajustons en permanence pour que votre bien performe au mieux, quelle que soit la saison.</div>
+      </div>
+      <div class="engagement-card">
+        <span class="engagement-num">05</span>
+        <i class="ti ti-users engagement-icon" aria-hidden="true"></i>
+        <div class="engagement-title">Duo dédié</div>
+        <div class="engagement-desc">Vous avez un interlocuteur unique et un binôme qui connaît votre bien par cœur. Pas de turn-over, pas de centre d'appel.</div>
+      </div>
+      <div class="engagement-card">
+        <span class="engagement-num">06</span>
+        <i class="ti ti-map-pin engagement-icon" aria-hidden="true"></i>
+        <div class="engagement-title">Ancrage local</div>
+        <div class="engagement-desc">Nous vivons et travaillons sur le littoral varois. Notre réseau d'artisans et de partenaires locaux est au service de votre bien.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section-alt" id="faq">
+  <div class="section-inner">
+    <p class="section-label">Questions fréquentes</p>
+    <h2 class="section-title">Tout ce que vous voulez savoir</h2>
+    <p class="section-sub" style="margin-bottom:40px">Les questions que nous posent le plus souvent les propriétaires qui nous contactent.</p>
+    <div class="faq-wrap">
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">Comment fonctionne votre commission de 20% ?<i class="ti ti-plus" aria-hidden="true"></i></button>
+        <div class="faq-a">Nous prélevons 20% sur les revenus réellement encaissés. Si votre bien ne génère rien, vous ne payez rien. Aucun frais fixe, aucun frais de dossier. Tout est détaillé chaque mois dans votre reporting.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">Les frais de ménage sont-ils inclus dans la commission ?<i class="ti ti-plus" aria-hidden="true"></i></button>
+        <div class="faq-a">Non. Les frais de ménage sont facturés séparément au coût réel de l'intervention. Selon l'accord convenu avec vous, ils peuvent être répercutés directement au voyageur ou refacturés au propriétaire. Tout apparaît clairement dans votre reporting mensuel.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">Quelle est la durée d'engagement et le préavis de résiliation ?<i class="ti ti-plus" aria-hidden="true"></i></button>
+        <div class="faq-a">Nous travaillons avec un engagement minimal de 3 mois, le temps de mettre en place la gestion dans les meilleures conditions (photos, annonces, livret d'accueil). Après cette période, un préavis de 2 mois est requis pour gérer proprement les réservations déjà prises et assurer la transition.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">Sur quelle zone géographique intervenez-vous ?<i class="ti ti-plus" aria-hidden="true"></i></button>
+        <div class="faq-a">Nous intervenons sur le littoral varois et la Côte d'Azur — principalement sur les secteurs de Sainte-Maxime, Fréjus, Saint-Raphaël et Agay. Contactez-nous pour tout bien situé en dehors de cette zone, nous étudions chaque demande.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">Que se passe-t-il en cas de dommage dans mon bien ?<i class="ti ti-plus" aria-hidden="true"></i></button>
+        <div class="faq-a">Nous réalisons un état des lieux photo systématique avant et après chaque séjour. En cas de dommage constaté, nous activons les garanties disponibles (dépôt de garantie, assurances de la plateforme) et vous informons immédiatement. Vous n'avez pas à gérer le litige vous-même.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">Comment se passe la mise en gestion de mon bien ?<i class="ti ti-plus" aria-hidden="true"></i></button>
+        <div class="faq-a">Nous commençons par un rendez-vous sur place pour visiter votre bien et comprendre vos attentes. Nous établissons ensuite un inventaire, réalisons les photos, créons le livret d'accueil et mettons en ligne les annonces. Votre bien est opérationnel en moins de 7 jours.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">Gérez-vous uniquement la location courte durée ?<i class="ti ti-plus" aria-hidden="true"></i></button>
+        <div class="faq-a">Oui. Nous nous spécialisons exclusivement dans la location courte durée sur plateformes (Airbnb, Booking, Abritel). C'est là que notre valeur ajoutée est maximale — optimisation des tarifs, gestion des voyageurs, accueil physique, rotation rapide et qualitative.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="contact">
+  <div class="section-inner">
+    <p class="section-label">Nous contacter</p>
+    <h2 class="section-title">Confier votre bien à Aegis Prestige</h2>
+    <p class="section-sub" style="margin-bottom:44px">Décrivez-nous votre bien et nous vous recontactons sous 24h pour un rendez-vous sur place.</p>
+    <div class="contact-grid">
+      <div>
+        <div class="contact-info-items">
+          <div class="ci"><i class="ti ti-map-pin" aria-hidden="true"></i><div><div class="ci-label">Zone d'intervention</div><div class="ci-val">Littoral Varois & Côte d'Azur<br><span style="font-size:12px;color:var(--grey)">Sainte-Maxime · Fréjus · Saint-Raphaël · Agay</span></div></div></div>
+          <div class="ci"><i class="ti ti-mail" aria-hidden="true"></i><div><div class="ci-label">Email</div><div class="ci-val">jocelyn@aegisprestige.fr</div></div></div>
+          <div class="ci"><i class="ti ti-phone" aria-hidden="true"></i><div><div class="ci-label">Téléphone</div><div class="ci-val">06 45 49 33 37</div></div></div>
+          <div class="ci"><i class="ti ti-clock" aria-hidden="true"></i><div><div class="ci-label">Disponibilité</div><div class="ci-val">7j/7 — réponse sous 24h</div></div></div>
+        </div>
+        <div style="margin-top:36px;padding:20px;border-left:2px solid var(--gold);background:var(--dark3)">
+          <p style="font-family:'Cormorant Garamond',serif;font-size:16px;font-style:italic;color:var(--gold2);line-height:1.65">"Nous valorisons votre bien comme s'il était le nôtre."</p>
+          <p style="font-size:11px;color:var(--grey);margin-top:10px;font-weight:300">Jocelyn & Océane — Aegis Prestige</p>
+        </div>
+      </div>
+      <div class="contact-form">
+        <input type="text" placeholder="Votre prénom et nom">
+        <input type="email" placeholder="Votre email">
+        <input type="tel" placeholder="Votre téléphone">
+        <select>
+          <option value="" disabled selected>Localisation du bien</option>
+          <option>Sainte-Maxime</option>
+          <option>Fréjus</option>
+          <option>Saint-Raphaël</option>
+          <option>Agay</option>
+          <option>Autre secteur (préciser en message)</option>
+        </select>
+        <select>
+          <option value="" disabled selected>Type de bien</option>
+          <option>Appartement</option>
+          <option>Villa / Maison</option>
+          <option>Studio</option>
+          <option>Autre</option>
+        </select>
+        <textarea placeholder="Parlez-nous de votre bien (surface, équipements, situation actuelle...)"></textarea>
+        <button type="submit">Envoyer ma demande →</button>
+        <p style="font-size:11px;color:var(--grey2);font-weight:300;line-height:1.6">En soumettant ce formulaire, vous acceptez d'être recontacté par Aegis Prestige. Vos données ne sont jamais transmises à des tiers.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-logo">Aegis<span>·</span>Prestige</div>
+  <div class="footer-legal">
+    Conciergerie Premium — Littoral Varois & Côte d'Azur<br>
+    SIRET en cours d'attribution · TVA non applicable art. 293B CGI<br>
+    © 2026 Aegis Prestige — Tous droits réservés
+  </div>
+</footer>
+
+<script>
+function toggleFaq(btn){
+  const item=btn.closest('.faq-item');
+  const wasOpen=item.classList.contains('open');
+  document.querySelectorAll('.faq-item').forEach(i=>i.classList.remove('open'));
+  if(!wasOpen)item.classList.add('open');
+}
+</script>
+</body>
+</html>
